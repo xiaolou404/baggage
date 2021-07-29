@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charSet="UTF-8">
+    <title>国航行李计算器</title>
+    <h1 align="center">国航行李托运</h1>
+    <link rel="stylesheet" href="css/bgstyle.css" />
+    <script src="jsStudy/bgjs.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+    <div id="main">
+            <table id="table1">
+                <tr>
+                <td class="onetype">航线类型</td>
+                <td class="allselect">
+                    <select id="inout">
+                        <option value="1">国内航线</option>
+                        <option value="2">国际航线</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td class="onetype">机舱类型</td>
+                <td class="allselect">
+                    <select id="chair">
+                        <option>经济舱</option>
+                        <option>超级经济舱</option>
+                        <option>悦享经济舱</option>
+                        <option>公务舱</option>
+                        <option>头等舱</option>
+                        <option>豪华头等舱</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td class="onetype">乘客类型</td>
+                <td class="allselect">
+                    <select id="ticketType">
+                        <option>成人</option>
+                        <option>儿童</option>
+                        <option>婴儿</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td class="onetype">VIP类型</td>
+                <td class="allselect">
+                    <select id="vip">
+                        <option>无</option>
+                        <option>银卡</option>
+                        <option>白金卡</option>
+                        <option>星空联盟金卡</option>
+                        <option>凤凰知音金卡</option>
+                        <option>凤凰知音终身白金卡</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td class="onetype">区域</td>
+                    <td>
+                        <select id="area">
+                            <option>无</option>
+                            <option>区域一</option>
+                            <option>区域二</option>
+                            <option>区域三</option>
+                            <option>区域四</option>
+                            <option>区域五</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                <td class="onetype">票价</td>
+                <td><input type="text" id="price"></td>
+                </tr>
+                <tr><td><input type="checkbox" id="disabled"/>是否残疾、伤、病</td></tr>
+            </table>
+            <table id="table2">
+                <th>行李类型</th><th>长（W）</th><th>宽（W）</th><th>高（H）</th><th>重量（kg）</th><th>提交</th>
+                <tr>
+                    <td>普通行李</td>
+                    <td><input type="text" id="length"></td>
+                    <td><input type="text" id="width"></td>
+                    <td><input type="text" id="height"></td>
+                    <td><input type="text" id="weight"></td>
+                    <td><input type="button" id="ch" onclick="addcomArr()" value="添加"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option>代步工具</option>
+                            <option>机械假肢</option>
+                            <option>专用小型气瓶</option>
+                            <option>心脏起搏器</option>
+                            <option>植入人体的装置</option>
+                            <option>便携式氧气浓缩机（POC）</option>
+                            <option>持续正压呼吸机（CPAP）</option>
+                            <option>其它内含锂电池的辅助设备</option>
+                            <option>导盲犬/助听犬/精神抚慰犬</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="length1"></td>
+                    <td><input type="text" id="width1"></td>
+                    <td><input type="text" id="height1"></td>
+                    <td><input type="text" id="weight1"></td>
+                    <td><input type="button" onclick="addDisable()" value="添加"></td>
+                </tr>
+                <tr>
+                    <td>骨灰</td>
+                    <td><input type="text" id="length2"></td>
+                    <td><input type="text" id="width2"></td>
+                    <td><input type="text" id="height2"></td>
+                    <td><input type="text" id="weight2"></td>
+                    <td><input type="button" value="添加" onclick="addAsh()"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option>折叠式婴儿车</option>
+                            <option>摇篮</option>
+                            <option>婴儿汽车安全座椅</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="length3"></td>
+                    <td><input type="text" id="width3"></td>
+                    <td><input type="text" id="height3"></td>
+                    <td><input type="text" id="weight3"></td>
+                    <td><input type="button" onclick="addBaby()" value="添加"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option>睡袋</option>
+                            <option>背包</option>
+                            <option>野营用具</option>
+                            <option>渔具</option>
+                            <option>乐器</option>
+                            <option>辅助设备</option>
+                            <option>可折叠婴儿床/车</option>
+                            <option>婴儿摇篮</option>
+                            <option>婴儿汽车安全座椅</option>
+                            <option>高尔夫球包</option>
+                            <option>保龄球</option>
+                            <option>滑翔伞/降落伞</option>
+                            <option>滑雪/滑水用具</option>
+                            <option>轮滑/滑板用具</option>
+                            <option>潜水用具</option>
+                            <option>射箭用具</option>
+                            <option>曲棍球用具</option>
+                            <option>冰球用具</option>
+                            <option>网球用具</option>
+                            <option>登山用具</option>
+                            <option>自行车</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="length4"></td>
+                    <td><input type="text" id="width4"></td>
+                    <td><input type="text" id="height4"></td>
+                    <td><input type="text" id="weight4"></td>
+                    <td><input type="button" onclick="inFree()" value="添加"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option>雪橇/水撬</option>
+                            <option>撑杆</option>
+                            <option>标枪</option>
+                            <option>冲浪板</option>
+                            <option>骑马用具</option>
+                            <option>橡皮艇或船</option>
+                            <option>皮划艇/独木舟</option>
+                            <option>风帆冲浪用具</option>
+                            <option>悬挂式滑翔运动用具</option>
+                            <option>单独包装的划船用具或浆</option>
+                            <option>小型电器或仪器</option>
+                            <option>媒体设备</option>
+                            <option>可作为行李运输的枪支</option>
+                            <option>可作为行李运输的子弹</option>
+                            <option>小动物（仅限家庭驯养的猫、狗）</option>
+                        </select>
+                    </td>
+                    <<td><input type="text" id="length5"></td>
+                    <td><input type="text" id="width5"></td>
+                    <td><input type="text" id="height5"></td>
+                    <td><input type="text" id="weight5"></td>
+                    <td><input type="button" onclick="outFree()" value="添加"></td>
+                </tr>
+            </table>
+            <p id="ps">ps:若有多件行李要托运，输入数据后点击“添加”按钮</p>
+            <input type="button" id="caculate" onclick="Caculate()" value="计算">
+        <div id="d2">已有收费行李:</div>
+        <p id="addition">注解：<br/>
+            区域一：美洲（除美国/加拿大外）/加勒比海地区与欧洲/非洲/中东/亚洲/西南太平洋之间的航线；<br/>
+            区域二：欧洲/中东与非洲/亚洲/西南太平洋之间航线；日本与西南太平洋之间航线；日本/西南太平洋与亚洲（不含日本及西南太平洋）/非洲之间航线；<br/>
+            区域三：加拿大与美洲（除美国/加拿大外）/加勒比海地区/欧洲/非洲/中东/亚洲/西南太平洋之间航线；<br/>
+            区域四：美国（含夏威夷）与美洲（除美国外）/加勒比海地区/欧洲/非洲/中东/亚洲/西南太平洋 之间航线；<br/>
+            区域五：非洲与亚洲（除日本外)之间航线；欧洲与中东之间航线；亚洲（除日本)内航线；美洲（除美国/加拿大）及加勒比海地区内航线；上述未列明的航线;<br/>
+        </p>
+    </div>
+</body>
+</html>
